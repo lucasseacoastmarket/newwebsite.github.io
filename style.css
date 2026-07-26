@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --farm-green: #2C3E2E;
+  --deep-forest: #1A271C;
+  --vintage-cream: #FAF6EF;
+  --accent-gold: #D4AF37;
+  --rust-copper: #A85A32;
+  --card-bg: #FFFFFF;
+  --text-primary: #222222;
+  --text-muted: #555555;
+  --border-subtle: #E2D9C8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: url('back.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Page-Specific Backgrounds */
+body.market-page {
+  background: url('back1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.resources-page {
+  background: url('back2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.contact-page {
+  background: url('back3.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Elegant Header & Navigation */
+header {
+  background-color: var(--deep-forest);
+  color: var(--vintage-cream);
+  padding: 1.8rem 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border-bottom: 3px solid var(--accent-gold);
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  animation: fadeInDown 1s ease-out;
+}
+
+nav {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--vintage-cream);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-gold);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-gold);
+}
+
+/* Dynamic Animation Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.animated-entry {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Layout Containers */
+main {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #2c3e2e, #1a271c);
+  color: #FFFFFF;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent-gold);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  opacity: 0.9;
+}
+
+/* Interactive Action Buttons (Call, Text, Email) */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-call {
+  background-color: var(--accent-gold);
+  color: #1A271C;
+}
+
+.btn-text {
+  background-color: var(--rust-copper);
+  color: #FFFFFF;
+}
+
+.btn-email {
+  background-color: var(--farm-green);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-gold);
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn-pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Cards & Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  border-color: var(--accent-gold);
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--farm-green);
+  margin-bottom: 0.8rem;
+}
+
+.price-tag {
+  display: inline-block;
+  background-color: var(--vintage-cream);
+  color: var(--rust-copper);
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  margin-top: 1rem;
+}
+
+/* Image Styling */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.image-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  background: #FFF;
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+}
+
+.image-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-card p {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background-color: var(--deep-forest);
+  color: var(--vintage-cream);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-top: 4rem;
+  border-top: 3px solid var(--accent-gold);
+}
+
+footer p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
