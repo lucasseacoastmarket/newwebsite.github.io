@@ -52,6 +52,14 @@
     <p>193 Bunker Hill Ave, Stratham, NH 03885 | Tel: (978) 378-0277</p>
     <p>&copy; 2026 Luca's Seacoast Market, LLC. All rights reserved.</p>
   </footer>
+<div id="orderModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 2000; animation: fadeIn 0.4s ease;">
+  <div style="background: #FFF; padding: 2.5rem 2rem; border-radius: 12px; position: relative; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 2px solid var(--accent-gold);">
+    <button onclick="document.getElementById('orderModal').style.display='none'" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-dark);">&times;</button>
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--farm-green);">Would You Like To Order Online?</h3>
+    <a href="https://lucasseacoastmarket.com/store.html" class="btn btn-call" style="display: inline-block; width: 100%; padding: 0.8rem 0; font-size: 1rem; border-radius: 6px;">Order Online</a>
+  </div>
+</div>
 
+<a href="https://lucasseacoastmarket.com/store.html" style="position: fixed; top: 15px; right: 15px; z-index: 1001; background: var(--accent-gold); color: #1A271C; padding: 0.6rem 1.2rem; border-radius: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-size: 0.85rem; border: 1px solid #FFF;">Order Online</a>
 </body>
 </html>
