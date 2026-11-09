@@ -299,3 +299,17 @@ footer p {
   opacity: 0.8;
   font-size: 0.9rem;
 }
+.order-now-btn {
+  float: right;
+  background-color: #ffcc00; /* Change to match your market's color scheme */
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: -5px; /* Adjust vertical alignment if needed */
+}
+
+.order-now-btn:hover {
+  background-color: #e6b800;
+}
